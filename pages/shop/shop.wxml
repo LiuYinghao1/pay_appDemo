@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="swiper-warp">
+    <swiper indicator-dots circular interval="3000" autoplay>
+      <swiper-item wx:for="{{bannerData}}" wx:key="key">
+      <image src="{{item.banner_img}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="main">
+  main
+  </view>
+</view>

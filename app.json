@@ -1,12 +1,39 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/shop/shop",
+    "pages/cart/cart",
+    "pages/every/every",
+    "pages/my/my"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "刘英豪",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+      "pagePath": "pages/shop/shop",
+      "text": "扫码购物",
+      "iconPath": "assets/images/index02.png",
+      "selectedIconPath": "assets/images/index01.png"
+    },
+    {
+      "pagePath": "pages/every/every",
+      "text": "每日优选",
+      "iconPath": "assets/images/product02.png",
+      "selectedIconPath": "assets/images/product01.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "个人中心",
+      "iconPath": "assets/images/user02.png",
+      "selectedIconPath": "assets/images/user01.png"
+    }
+
+  ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

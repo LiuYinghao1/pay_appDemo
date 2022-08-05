@@ -1,0 +1,20 @@
+/* pages/shop/shop.wxss */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container .swiper-warp {
+  width: 100%;
+  height: 320rpx;
+  /* background-color: yellow; */
+}
+.container .swiper-warp image{
+  width: 100%;
+  height: 340rpx;
+
+}
+.container .main{
+  flex:1;
+}
