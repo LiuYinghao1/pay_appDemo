@@ -9,8 +9,9 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "刘英豪",
-    "navigationBarTextStyle":"white"
+    "navigationBarTitleText": "積雲團購",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [

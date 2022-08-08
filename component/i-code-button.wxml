@@ -1,0 +1,6 @@
+<view class="container">
+<view class="box" bindtap="handleScanCode">
+  <image src="../assets/images/qrcode.png"></image>
+  <text>請掃描商品條形碼</text>
+</view>
+</view>
