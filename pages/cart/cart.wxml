@@ -17,7 +17,7 @@
       <text class="price">¥{{totalPrice}}</text>
     </view>
     <view class="button-group">
-      <view class="add">继续添加</view>
+      <view class="add" bindtap="handleAdd">继续添加</view>
       <view class="settle">去结算({{cartList.length}})</view>
     </view>
   </view>

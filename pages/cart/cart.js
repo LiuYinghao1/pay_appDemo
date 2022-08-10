@@ -45,11 +45,11 @@ Page({
       content: '您确定删除此商品吗？',
       success: (res) => {
         if (res.confirm) {
-          this.data.cartList.splice(index,1)
+          this.data.cartList.splice(index, 1)
           this.setData({
-            cartList:this.data.cartList
+            cartList: this.data.cartList
           })
-          Storage.set('carts',this.data.cartList)
+          Storage.set('carts', this.data.cartList)
           this.handleComputedPrice()
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -60,11 +60,11 @@ Page({
   /**
    * 计算商品总价
    */
-  handleComputedPrice(){
-    let totalPrice=0
-    this.data.cartList.forEach(item=>{
-      const total=(item.num*item.price).toFixed(2)
-      totalPrice+=Number.parseFloat(total)
+  handleComputedPrice() {
+    let totalPrice = 0
+    this.data.cartList.forEach(item => {
+      const total = (item.num * item.price).toFixed(2)
+      totalPrice += Number.parseFloat(total)
     })
     this.setData({
       totalPrice
@@ -79,10 +79,26 @@ Page({
     totalPrice: 0
   },
 
+  /**
+   * 继续添加商品
+   * @param {*} event 
+   */
+  handleAdd() {
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        const event = {
+          detail: res.result
+        }
+        this.getShopCode(event)
+      }
+    })
+  },
+
   async getShopCode(event) {
     // 获取商品的条形码
     const qcode = event.detail
-    console.log('qcode', qcode)
+    // console.log('qcode', qcode)
 
     // 如果商品条形码不存在,则不继续往下执行
     if (!qcode) return
@@ -113,6 +129,7 @@ Page({
    */
   onLoad(options) {
     this.getCartList()
+    this.handleComputedPrice()
   },
 
   /**
@@ -124,6 +141,7 @@ Page({
     this.setData({
       cartList
     })
+    this.handleComputedPrice()
 
   },
 
