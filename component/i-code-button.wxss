@@ -14,6 +14,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .container .box image{
   width: 180rpx;
@@ -23,4 +24,15 @@
   width: 180rpx;
   text-align: center;
   color: #fff;
+}
+.circle{
+  position: absolute;
+  top: 50rpx;
+  right: 50rpx;
+  background-color: red;
+  border-radius: 50%;
+  width: 50rpx;
+  color: #fff;
+  text-align: center;
+  height: 50rpx;
 }

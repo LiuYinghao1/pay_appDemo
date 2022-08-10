@@ -25,5 +25,5 @@
 <view class="container1" wx:else="">
 <text class="tips">购物车是空的哦~</text>
 <image class="text-img" src="../../assets/images/cart.png"></image>
-<view class="btn-qcode">扫一扫条形码</view>
+<view class="btn-qcode" bindtap="handleAdd">扫一扫条形码</view>
 </view>

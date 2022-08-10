@@ -3,7 +3,8 @@
     "pages/shop/shop",
     "pages/cart/cart",
     "pages/every/every",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/order/order"
 
   ],
   "window":{

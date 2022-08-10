@@ -1,7 +1,12 @@
 // pages/shop/shop.js
 import ShopModel from '../../model/shop.js'
-import {navigateTo} from "../../utils/navigate"
-import {addCart} from "../../common/cart"
+import {
+  navigateTo
+} from "../../utils/navigate"
+import {
+  addCart
+} from "../../common/cart"
+import Storage from '../../utils/storage'
 Page({
   /**
    * 调用轮播图方法
@@ -15,6 +20,9 @@ Page({
 
   // 获取商品信息
   async getShopCode(e) {
+    if(this.data.status){
+      navigateTo("/pages/order/order")
+    }
     // 获取商品条形码
     const qcode = e.detail
     // 如果条形码不存在,则不继续往下执行
@@ -25,20 +33,20 @@ Page({
       const response = await ShopModel.getShopingInfo(qcode)
 
       // 如果商品信息获取失败.则不继续往下执行
-      if(!response.success) return
+      if (!response.success) return
 
       // 获取商品信息
-      const result= response.result
+      const result = response.result
 
       // 获取商品的数据小于或等于0,说明没有当前条形码的商品数据,则不继续往下执行
-      if(result.length<=0) return
+      if (result.length <= 0) return
 
       // 将商品添加到本地
       addCart(result[0])
 
       //跳转到购物车页面
       navigateTo("/pages/cart/cart")
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
   },
@@ -46,7 +54,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bannerData: []
+    bannerData: [],
+    cartList: [],
+    status: false,
+    const:0
   },
 
   /**
@@ -54,13 +65,29 @@ Page({
    */
   onLoad(options) {
     this.getBanner()
+    // this.getCartList()
   },
+
+  /**
+   * 初始化获取商品数据
+   */
+  getCartList(){
+    const cartList = Storage.get("carts")
+    const  status = cartList.length > 0 ? true : false
+    const count = cartList.length
+    this.setData({
+      cartList,
+      status,
+      count
+    })
+
+  },  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+      this.getCartList()
   },
 
   /**

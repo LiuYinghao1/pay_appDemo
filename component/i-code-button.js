@@ -4,7 +4,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    status: Boolean,
+    count: {
+      type: Number,
+      value: 0
+    }
   },
 
   /**
@@ -18,17 +22,22 @@ Component({
    * 组件的方法列表
    */
   methods: {
-      // 打開掃描二維碼
-      handleScanCode(){
-        wx.scanCode({
-          onlyFromCamera: true,
-          success:(res)=>{
-            this.triggerEvent('getResult',res.result)
-          },
-          fail:(err)=>{
-            console.log('取消掃碼');
-          }
-        })
+    // 打開掃描二維碼
+    handleScanCode() {
+      console.log(this.data.count)
+      if (this.data.status) {
+        this.triggerEvent("getResult")
+        return
       }
+      wx.scanCode({
+        onlyFromCamera: true,
+        success: (res) => {
+          this.triggerEvent("getResult", res.result)
+        },
+        fail: (err) => {
+          console.log("取消扫码")
+        }
+      })
+    }
   }
 })

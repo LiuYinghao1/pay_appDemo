@@ -10,11 +10,11 @@
   height: 320rpx;
   /* background-color: yellow; */
 }
-.container .swiper-warp image{
+.container .swiper-warp image {
   width: 100%;
   height: 340rpx;
+}
+.container .main {
+  flex: 1;
+}
 
-}
-.container .main{
-  flex:1;
-}
