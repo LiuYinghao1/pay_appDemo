@@ -1,5 +1,6 @@
 /* pages/order/order.wxss */
 .container{
+  overflow:scroll;
   background-color: #f9f9f9;
   display: flex;
   width: 100vw;
@@ -50,6 +51,7 @@ border-bottom: 2rpx solid #ccc;
 .btn-ok{
   border-top: 1px solid #ccc;
   position: flexd;
+  /* position: absolute; */
   left: 0;
   bottom: 0;
   height: 10vh;

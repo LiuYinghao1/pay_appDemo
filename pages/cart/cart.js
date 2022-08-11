@@ -73,7 +73,7 @@ Page({
   },
 
   handleGoOrder(){
-    navigateTo("../order/order")
+    navigateTo("/pages/order/order")
   },
 
   /**
