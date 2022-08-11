@@ -1,2 +1,39 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<view class="container">
+  <view class="main">
+    <view class="shoper">
+      <view class="shoper-left">
+        农夫山泉东方树叶茉莉花茶500ml
+      </view>
+      <view class="shoper-right">
+        <text class="price"> ￥3.5</text>
+        <view class="shoper-num">
+          X <text>1</text>
+        </view>
+      </view>
+    </view>
+    <view class="model-total-num">
+    共 <text>2</text> 件商品 <text>展开</text>
+    </view>
+    <view class="item">
+      <text>余额 <text class="price">(￥4)</text></text>
+      <switch color="#FEBE1B"></switch>
+    </view>
+    <view class="item">
+      <text>商品金额</text>
+      <text class="price">¥15.5</text>
+    </view>
+    <view class="item">
+      <text>余额减扣</text>
+      <text class="price">-¥4</text>
+    </view>
+  </view>
+  <view class="btn-ok">
+    <view class="left">
+      <text>实际支付</text>
+      <text class="left-two">￥11.5</text>
+    </view>
+    <view class="right">
+      确认支付
+    </view>
+  </view>
+</view>
