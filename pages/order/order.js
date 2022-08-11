@@ -1,5 +1,6 @@
 // pages/order/order.js
 import Storage from '../../utils/storage'
+import {navigateTo} from '../../utils/navigate'
 Page({
 
   /**
@@ -9,7 +10,10 @@ Page({
     carts: [],
     initCarts:[],
     len:0,
-    resultCarts:[]
+    resultCarts:[],
+    totalPrice:0,
+    balance:4,
+    flag:false
   },
   /**
    * 获取所有商品信息
@@ -42,13 +46,45 @@ Page({
     }
   },
 
-
+  /**
+   * 计算商品总计数
+   * @param {*} options 
+   */
+  handleComputedPrice(){
+    let totalPrice=0
+    this.data.resultCarts.forEach(item=>{
+      totalPrice+=(item.price*item.num)
+    })
+    this.setData({
+      totalPrice
+    })
+  },
+    
+/**
+ * 开启余额减扣
+ * @param {*} options 
+ */
+handleSwitch(e){
+  // console.log(e);
+  const value=e.detail.value
+  this.setData({
+    flag:value
+  })
+},
+/**
+ *  跳转支付页面 
+ * 
+ */
+handleGoSuccess(){
+  navigateTo('/pages/success/success')
+},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getResultShop()
+    this.getResultShop(),
+    this.handleComputedPrice()
   },
 
   /**

@@ -4,7 +4,8 @@
     "pages/cart/cart",
     "pages/every/every",
     "pages/my/my",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/success/success"
 
   ],
   "window":{

@@ -15,16 +15,16 @@
       共 <text>{{len}}</text> 件商品 <text  bindtap="handleToggleShop">{{len === carts.length?'收起':'展开'}}</text>
     </view>
     <view class="item">
-      <text>余额 <text class="price">(￥4)</text></text>
-      <switch color="#FEBE1B"></switch>
+      <text>余额 <text class="price">(￥{{balance}})</text></text>
+      <switch  bindchange="handleSwitch" color="#FEBE1B"></switch>
     </view>
     <view class="item">
       <text>商品金额</text>
-      <text class="price">¥15.5</text>
+      <text class="price">¥{{totalPrice}}</text>
     </view>
     <view class="item">
       <text>余额减扣</text>
-      <text class="price">-¥4</text>
+      <text class="price">-¥{{flag?balance:0}}</text>
     </view>
 
 
@@ -34,9 +34,9 @@
   <view class="btn-ok">
     <view class="left">
       <text>实际支付</text>
-      <text class="left-two">￥11.5</text>
+      <text class="left-two">￥{{flag?totalPrice-balance:totalPrice}}</text>
     </view>
-    <view class="right">
+    <view class="right" bindtap="handleGoSuccess" >
       确认支付
     </view>
   </view>

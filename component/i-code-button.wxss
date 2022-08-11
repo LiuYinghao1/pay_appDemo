@@ -5,6 +5,7 @@
  flex: 1;
 }
 .box{
+  margin-top: 50rpx;
   border: 25rpx solid #FFE49B;
   width: 320rpx;
   height: 320rpx;

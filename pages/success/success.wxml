@@ -1,0 +1,31 @@
+<!--pages/success/success.wxml-->
+<view class="continer">
+  <view class="main">
+    <view class="img">
+      <image src="../../assets/images/face.png" alt="" />
+      <text>支付成功</text>
+    </view>
+
+    <view class="btn" bindtap="handleGoHome">返回首页 </view>
+  </view>
+  <view class="buttom-shop">
+    <view class="title">
+      <text class="red">*</text>
+      <text class="gray">猜你喜欢</text>
+      <text class="red">*</text>
+    </view>
+    <view class="shop-item">
+      <image src="../../assets/images/00.png"></image>
+      <view class="font-item">
+        <text>海南现摘芒果</text>
+        <text class="rmb">￥29.9</text>
+        <view class="last-btn">
+          <text>销量：201</text>
+          <text class="btn" >立即购买</text>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+</view>
