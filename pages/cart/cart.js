@@ -4,6 +4,7 @@ import ShopModel from '../../model/shop'
 import {
   addCart
 } from '../../common/cart'
+import {navigateTo} from '../../utils/navigate'
 Page({
 
   /**
@@ -69,6 +70,10 @@ Page({
     this.setData({
       totalPrice
     })
+  },
+
+  handleGoOrder(){
+    navigateTo("../order/order")
   },
 
   /**

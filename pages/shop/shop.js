@@ -21,7 +21,7 @@ Page({
   // 获取商品信息
   async getShopCode(e) {
     if(this.data.status){
-      navigateTo("/pages/order/order")
+      navigateTo("/pages/cart/cart")
     }
     // 获取商品条形码
     const qcode = e.detail
