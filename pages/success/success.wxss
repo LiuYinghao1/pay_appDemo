@@ -46,6 +46,9 @@
   margin-top: 30rpx;
   text-align: center;
   font-size: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 2px solid #efefef;
   padding-bottom: 20rpx;
 }
@@ -54,9 +57,12 @@
 }
 .continer .buttom-shop .red{
   color: red;
+  height: 5rpx;
+  line-height: 5rpx;
 }
 .continer .buttom-shop .shop-item{
   padding: 20rpx 20rpx;
+  
 }
 .continer .buttom-shop .shop-item image{
   width: 710rpx;
